@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html id="html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+    <script th:src="@{/js/lang.js}"></script>
+    <title data-bind="text: locale().tittle"></title>
+</head>
+<body>
+<img th:src="@{/imagenes/cities.gif}" class="fn">
+<div th:replace="headLang :: headLang"></div>
+<div class="registro">
+    <div class="formulario" style="display: block">
+        <form data-bind="submit: register.bind($data)" name="registro">
+            <label id="email" name="email" class="email">Email</label><input type="text" id="emailRegistro" name="email" /><br>
+            <label id="pwd1" name="password" class="pass" data-bind="text: locale().pass"></label><input type="password" id="pass1" name="pass" /><br>
+            <label id="pwd2" name="password2" class="pass2" data-bind="text: locale().checkPass"></label><input type="password" id="pass2" name="pass2" />
+            <input id="buttonRegister" type="submit" name="registrarse" data-bind="value: locale().buttonRegister" />
+            <p id="mensajeErrorRegistro" class="error" data-bind="text: responseErrorRegister"></p>
+            <p id="mensajeCorrectoRegistro" class="correcto" data-bind="text: responseCorrectoRegister"></p>
+            <pre></pre>
+            <span id="questionRegister" class="toggle" data-bind="text: locale().questionRegister"></span>
+        </form>
+    </div>
+
+    <div class="formulario" style="display: none">
+        <form data-bind="submit: login">
+            <label name="email" class="email">Email</label><input type="text" id="email-login" name="email-login" /><br>
+            <label id="pwd3" name="password" class="pass" data-bind="text: locale().pass"></label><input type="password" id="pwd-login" name="pass-login" /><br>
+            <input id="buttonLogin" type="submit" name="login" data-bind="value: locale().buttonLogin" /> <br>
+            <p id="mensajeErrorLogin" class="error" data-bind="text: responseErrorLogin"></p>
+            <p id="mensajeCorrectoLogin" class="correcto" data-bind="text: responseCorrectoLogin"></p>
+            <pre></pre>
+            <span id="questionLogin" class="toggle" data-bind="text: locale().questionLogin"></span>
+        </form>
+    </div>
+</div>
+<script src="https://knockoutjs.com/downloads/knockout-3.5.0.js"></script>
+<script th:src="@{/js/main.js}"></script>
+<div th:replace="footer :: footer"></div>
+</body>
+</html>

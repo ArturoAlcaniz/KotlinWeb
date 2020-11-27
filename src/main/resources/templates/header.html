@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+    <div th:fragment="header">
+        <div class="header">
+
+            <div class="header_text">
+                Dinero:
+                <div th:with="efectivo=${session.user.efectivo}" id="dinero" th:class="${efectivo == 0} ? dinero2 : dinero1">[[${efectivo}]]</div>
+            </div>
+
+            <div id="experiencia" class="header_text2">
+                <div th:with="experiencia=${session.user.experiencia}">Experiencia: [[${experiencia}]]</div>
+            </div>
+
+        </div>
+
+        <div class="columnaMenu">
+
+            <div class="menu">
+                <div th:with="currentURL=${#httpServletRequest.requestURI}">
+                    <a th:href="@{'/home/perfil'}">
+                        <div th:if="${currentURL=='/home/perfil'}">
+                            <div class="btn_header header_current">
+                                <img id="perfil" th:src="@{/imagenes/perfil.png}">
+                            </div>
+                        </div>
+                        <div th:unless="${currentURL=='/home/perfil'}">
+                            <div class="btn_header">
+                                <img id="perfil" th:src="@{/imagenes/perfil.png}">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a th:href="@{'/home/tienda'}">
+                        <div th:if="${currentURL=='/home/tienda'}">
+                            <div class="btn_header header_current">
+                                <img id="tienda" th:src="@{/imagenes/tienda.png}">
+                            </div>
+                        </div>
+                        <div th:unless="${currentURL=='/home/tienda'}">
+                            <div class="btn_header">
+                                <img id="tienda" th:src="@{/imagenes/tienda.png}">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a th:href="@{'/home/negocios'}">
+                        <div th:if="${currentURL=='/home/negocios'}">
+                            <div class="btn_header header_current">
+                                <img id="negocios" th:src="@{/imagenes/negocios.png}">
+                            </div>
+                        </div>
+                        <div th:unless="${currentURL=='/home/negocios'}">
+                            <div class="btn_header">
+                                <img id="negocios" th:src="@{/imagenes/negocios.png}">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a th:href="@{'/home/trabajo'}">
+                        <div th:if="${currentURL=='/home/trabajo'}">
+                            <div class="btn_header header_current">
+                                <img id="trabajo" th:src="@{/imagenes/trabajo.png}">
+                            </div>
+                        </div>
+                        <div th:unless="${currentURL=='/home/trabajo'}">
+                            <div class="btn_header">
+                                <img id="trabajo" th:src="@{/imagenes/trabajo.png}">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a th:href="@{'/home/ranking'}">
+                        <div th:if="${currentURL=='/home/ranking'}">
+                            <div class="btn_header header_current">
+                                <img id="ranking" th:src="@{/imagenes/ranking.png}">
+                            </div>
+                        </div>
+                        <div th:unless="${currentURL=='/home/ranking'}">
+                            <div class="btn_header">
+                                <img id="ranking" th:src="@{/imagenes/ranking.png}">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a th:href="@{'/home/chat'}">
+                        <div th:if="${currentURL=='/home/chat'}">
+                            <div class="btn_header header_current">
+                                <img id="chat" th:src="@{/imagenes/chat.png}">
+                            </div>
+                        </div>
+                        <div th:unless="${currentURL=='/home/chat'}">
+                            <div class="btn_header">
+                                <img id="chat" th:src="@{/imagenes/chat.png}">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a th:href="@{'/home/logout'}">
+                        <div th:if="${currentURL=='/home/logout'}">
+                            <div class="btn_header">
+                                <img id="logout" th:src="@{/imagenes/logout.png}">
+                            </div>
+                        </div>
+                        <div th:unless="${currentURL=='/home/logout'}">
+                            <div class="btn_header">
+                                <img id="logout" th:src="@{/imagenes/logout.png}">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Ranking</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div th:replace="headLang :: headLang"></div>
+    <div class="ranking" id="ranking">
+        <label>
+            <section class="posicion">Posición</section>
+            <section class="email">Email</section>
+            <section class="efectivo">Efectivo</section>
+            <section class="actividad">Actividad</section>
+        </label>
+
+        <!-- ko foreach : { data: jugadores, as: 'row' }  -->
+            <label data-bind="attr : {id : 'top' + $index()}">
+                <section class="posicion" data-bind="text: index"></section>
+                <section class="email" data-bind="text: email"></section>
+                <section class="efectivo" data-bind="text: efectivo"></section>
+                <section class="actividad" data-bind="text: actividad"></section>
+            </label>
+        <!-- /ko -->
+    </div>
+<div th:replace="footer :: footer"></div>
+<script src="https://knockoutjs.com/downloads/knockout-3.5.0.js"></script>
+<script th:src="@{/js/rank.js}"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Ranking</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div th:replace="headLang :: headLang"></div>
+<div class="chat" id="chat">
+    <form data-bind="submit: enviarMensaje" name="chatFormulario">
+
+        <div id="cont" class="cont">
+            <div id="MensajesChat" class="MensajesChat">
+                <div id="startChat"></div>
+                <!-- ko foreach : { data: mensajes, as: 'mensaje'} -->
+                <label class="FechaProx" data-bind="text : '(' + mensaje.fecha + ')'"></label>
+                <label class="Nombre" data-bind="text : mensaje.usuario + ':'"></label>
+                <label class="Mensajes" data-bind="text : mensaje.mensaje"></label>
+                <br>
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="MensajeError">
+            <p id="mensajeErrorChat" class="error"></p>
+            <p id="mensajeCorrectoChat" class="correcto"></p>
+        </div>
+        <input style="width: 70%;" type="text" id="Mensaje" name="Mensaje"/>
+        <input type="submit" name="enviarMensaje" value="Enviar Mensaje">
+
+    </form>
+</div>
+
+<div th:replace="footer :: footer"></div>
+<script src="https://knockoutjs.com/downloads/knockout-3.5.0.js"></script>
+<script th:src="@{/js/chat.js}"></script>
+</body>
+</html>

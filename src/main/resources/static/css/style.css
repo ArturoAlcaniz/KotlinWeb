@@ -1,0 +1,662 @@
+/* CSS Document */
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	margin:0px;
+	--header-height: 59px;
+	overflow-x: hidden;
+}
+
+.input[disabled] {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+.header {
+	position: absolute;
+	overflow: hidden;
+	background-image: url("/imagenes/header.png");
+	background-repeat: repeat-x;
+	height: var(--header-height);
+	top: 0;
+	width: 100%;
+	left: 0;
+	margin: auto;
+}
+
+input:read-only {
+	border: none;
+	background: transparent;
+	outline: none;
+	padding: 0px 0px 0px 0px;
+}
+
+.cookie_message {
+	z-index: 1;
+	position:absolute;
+
+	overflow: hidden;
+	background-image: url("/imagenes/header.png");
+	background-repeat: repeat-x;
+	height: var(--header-height);
+	top: 0;
+	width: 100%;
+	left: 0;
+	margin: auto;
+	color: aliceblue;
+
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
+.footer p{
+	position: relative;
+	bottom: 17px;
+
+}
+
+.Mensaje-Captcha {
+	margin-top: 10px;
+}
+
+.Mensaje-Captcha small {
+	color: #9C9C9C;
+}
+
+.Mensaje-Captcha a {
+	text-decoration: none;
+}
+
+.bloque-hf{
+	position: absolute;
+	height: 10%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	margin: auto;
+}
+
+.experiencia, .exprequerida{
+	display: inline-block;
+}
+
+.sueldo, .sueldohora{
+	display: inline-block;
+}
+
+.cc-compliance{
+	position: absolute;
+	left: 90%;
+	background-color: #4CAF50;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 15px;
+	font-size: 16px;
+}
+
+.fn{
+	align-content: center;
+	display: block;
+	vertical-align: center;
+	height: 100%;
+	width: 100%;
+	Objet-fit: cover;
+	left: 0%;
+	top: 0%;
+	position: absolute;
+}
+
+.fn, .registro{
+	display: inline-block;
+	overflow: hidden;
+}
+
+.login {
+	position: relative;
+	top: 10px;
+	margin: 5px;
+	margin-left: 13.5%;
+	float: left;
+	display: inline-block;
+}
+
+.login p, .login input{
+	display: inline-block;
+}
+
+.cerrar-sesion{
+	margin-left: 200px;
+	top: 80px;
+	position: fixed;
+	right: 100px;
+	z-index: 10
+}
+
+.columnaMenu{
+	background-color: dimgrey;
+	height: 100%;
+	display: block;
+	position: absolute;
+	width: 130px;
+	z-index: -1;
+}
+
+.menu{
+	margin-top: 80px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 80px;
+	height: 100%;
+	width: 100%;
+	display: block;
+
+
+}
+
+.header_text .dinero2{
+	display: inline-block;
+}
+
+.header_text .dinero1{
+	display: inline-block;
+}
+
+.dinero1{
+	color: green;
+}
+
+.dinero2{
+	color: red;
+}
+
+.columnaMenu, .fn{
+	display: inline-block;
+	overflow: hidden;
+}
+
+.registro span{
+	cursor: pointer;
+}
+
+.cambioPerfil span{
+	cursor: pointer;
+	margin-top:5px;
+}
+
+.unionTrabajo span{
+	cursor: pointer;
+	margin-top: 5px;
+}
+
+.error {
+	color: red;
+	font: bold;
+}
+
+.correcto {
+	color: green;
+	font: bold;
+}
+
+.valido {
+	color: green;
+	font: bold;
+}
+
+.error-login {
+	color: red;
+	font: bold;
+	width: 50%;
+}
+
+.registro {
+
+	left: 43%;
+	background-color: aliceblue;
+	position: fixed;
+	box-sizing: border-box;
+	box-shadow: 2px 5px #888888;
+	margin: 180px auto 10px;
+	text-align: left;
+	align-content: center;
+	display: block;
+	color: black;
+	padding: 12px 20px;
+	border-radius: 10px;
+	border: 5px solid #000;
+}
+
+.cambioPerfil {
+
+	background-color: aliceblue;
+	box-sizing: border-box;
+	box-shadow: 2px 5px #888888;
+	margin-left: 40%;
+	margin-top: 10%;
+	text-align: left;
+	align-content: center;
+	display: inline-block;
+	color: black;
+	padding: 12px 20px;
+	position: absolute;
+	border-radius: 10px;
+	border: 5px solid #000;
+}
+
+.unionTrabajo {
+
+	background-color: aliceblue;
+	box-sizing: border-box;
+	box-shadow: 2px 5px #888888;
+	margin-left: 40%;
+	margin-top: 10%;
+	text-align: left;
+	align-content: center;
+	display: inline-block;
+	color: black;
+	padding: 12px 20px;
+	position: absolute;
+	border-radius: 10px;
+	border: 5px solid #000;
+}
+
+.cambioRanking{
+	margin-top: 8%;
+	margin-left: 40%;
+	position: absolute;
+}
+
+.ranking {
+
+	background-color: aliceblue;
+	box-sizing: border-box;
+	box-shadow: 2px 5px #888888;
+	margin-left: 40%;
+	margin-top: 10%;
+	text-align: left;
+	align-content: center;
+	display: inline-block;
+	color: black;
+	padding: 12px 20px;
+	position: absolute;
+	border-radius: 10px;
+	border: 5px solid #000;
+    width: 650px;
+    font-size: small;
+    font-weight: bold;
+}
+
+.ranking section {
+    display: inline-block;
+}
+
+.ranking .posicion {
+    width: 100px;
+}
+
+.ranking .email {
+    width: 250px;
+}
+
+.ranking .efectivo {
+    width: 100px;
+}
+
+.ranking .actividad {
+    width: 110px;
+}
+
+.Nombre, .Mensajes, .FechaProx {
+	display: inline-block;
+}
+
+.Nombre {
+	font-weight: bold;
+}
+
+
+.Poder {
+
+	color: green;
+}
+
+.FechaProx {
+    font-size: 10px;
+}
+
+.Mensajes {
+
+    font-family: "Times New Roman";
+    font-size: 12px;
+    position: relative;
+}
+
+.chatBlocked {
+    display: none;
+}
+
+.chat {
+
+	background-color: aliceblue;
+	box-sizing: border-box;
+	box-shadow: 2px 5px #888888;
+	margin-left: 30%;
+	margin-top: 10%;
+	text-align: left;
+	align-content: center;
+	color: black;
+	padding: 12px 20px;
+	position: absolute;
+	border-radius: 10px;
+	border: 5px solid #000;
+	width: 500px;
+	height: 500px;
+	overflow: hidden;
+}
+
+.chatJoinBlocked{
+    display: none;
+}
+
+.chatJoin{
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+.EspacioVacio{
+	display: inline-block;
+	float: right;
+	position: relative;
+	width: 50px;
+	height: 400px;
+
+}
+
+.MensajesChat{
+	overflow-y: auto;
+	position: absolute;
+	margin-left: 5%;
+	width: 90%;
+	height: 360px;
+	display: block;
+
+
+
+}
+
+
+.MensajesChat::-webkit-scrollbar {
+	display: none;
+}
+
+.MisNegocios{
+	overflow-y: auto;
+	position: absolute;
+	margin-left: 5%;
+	width: 90%;
+	height: 400px;
+	display: block;
+
+
+
+}
+
+.MisNegocios::-webkit-scrollbar {
+	display: none;
+}
+
+.cont{
+
+	position:relative;
+	overflow: hidden;
+	width: 100%;
+	height: 360px;
+
+}
+
+.chat input{
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.MensajeError {
+	position: relative;
+	width: 100%;
+	height: 40px;
+}
+
+.negocios {
+
+	background-color: aliceblue;
+	box-sizing: border-box;
+	box-shadow: 2px 5px #888888;
+	margin-left: 40%;
+	margin-top: 10%;
+	text-align: left;
+	align-content: center;
+	display: inline-block;
+	color: black;
+	padding: 12px 20px;
+	position: absolute;
+	border-radius: 10px;
+	border: 5px solid #000;
+}
+
+.negocios2 {
+
+	background-color: aliceblue;
+	box-sizing: border-box;
+	box-shadow: 2px 5px #888888;
+	margin-left: 25%;
+	margin-top: 30%;
+	text-align: left;
+	align-content: center;
+	display: inline-block;
+	color: black;
+	padding: 12px 20px;
+	position: fixed;
+	border-radius: 10px;
+	border: 5px solid #000;
+	width: 50%;
+	height: 200px;
+}
+
+
+.header_text {
+	color: aliceblue;
+	left: 130px;
+	top: 30%;
+	position: absolute;
+	width: 200px;
+	height: 22px;
+
+}
+
+.header_text2 {
+	color: aliceblue;
+	left: 330px;
+	top: 30%;
+	position: absolute;
+	width: 200px;
+	height: 22px;
+}
+
+.cambioPerfil input {
+	outline: auto;
+	display: block;
+	background: #d3d3d3;
+	border: 5px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 2px 10px;
+	color: black;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: bold;
+	line-height: inherit;
+	transition: 0.3s ease;
+}
+
+.unionTrabajo input{
+	outline: auto;
+	display: block;
+	background: #d3d3d3;
+	border: 5px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 2px 10px;
+	color: black;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: bold;
+	line-height: inherit;
+	transition: 0.3s ease;
+}
+
+.perfilFormulario {
+	display: block;
+}
+
+.cambioPerfil [type="submit"] {
+
+	position: relative;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.unionTrabajo [type="submit"] {
+
+	position: relative;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.formulario {
+	display: none;
+}
+
+.registro {
+	display: block;
+}
+
+.registro input {
+	outline: auto;
+	display: block;
+	background: #d3d3d3;
+	border: 5px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	padding: 2px 10px;
+	color: black;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: bold;
+	line-height: inherit;
+	transition: 0.3s ease;
+
+}
+
+.registro [type="submit"] {
+
+	position: relative;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+
+label {
+
+	position: relative;
+	margin-bottom: 20px auto;
+	color: black;
+
+}
+
+.btn_header {
+	width: 121px;
+	height: 27px;
+	position: relative;
+	display: block;
+	margin-bottom: 5px;
+	z-index: 10;
+	color: honeydew;
+	background: url("/imagenes/boton1.png");
+	text-align: center;
+}
+
+.btn_header img {
+
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	z-index: 11;
+}
+
+.menu {
+	display: inline-block;
+}
+
+
+.btn_header:hover {
+	background: url("/imagenes/boton2.png");
+}
+
+.btn_header:active {
+	background: url("/imagenes/boton5.png");
+}
+
+.btn_header.header_current {
+	background: url("/imagenes/boton3.png");
+}
+
+.btn_header.header_current:active {
+	background: url("/imagenes/boton6.png");
+}
+
+.btn_header.header_current:hover {
+	background: url("/imagenes/boton4.png");
+}
+
+.contentLang {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    transform: scale(2);
+    width: 110px;
+    height: 32px;
+}
+
+.contentLang span {
+    display: inline-block;
+}
+.contentLang span, .flag-sep {
+    display: inline-block;
+}
+
+.flag-sep {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+span.flag-icon:hover {
+    cursor: pointer;
+}
+
+.footer {
+	position: absolute;
+	overflow: hidden;
+	left: 0;
+	text-align: center;
+	color: white;
+	background-image: url("/imagenes/header.png");
+	background-repeat: repeat-x;
+	height: 49px;
+	margin: auto;
+	bottom: 0px;
+	width: 100%;
+}
