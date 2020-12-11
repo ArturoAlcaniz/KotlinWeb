@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link th:href="@{/css/style.css}" rel="stylesheet" />
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+    <title>Trabajo</title>
+    <script type="application/javascript" th:src="@{/js/externos/angular.min.js}"></script>
+    <script type="application/javascript" th:src="@{/js/externos/jquery.min.js}"></script>
+    <script type="application/javascript" th:src="@{/js/externos/bootstrap.min.js}"></script>
+    <link th:href="@{/css/externos/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/externos/flag-icon.min.css}" rel="stylesheet"/>
 </head>
 <body>
 <div th:replace="header :: header"></div>
@@ -18,10 +18,10 @@
 
         <form data-bind="submit: trabajar">
 
-            <select id="TrabajoELEGIDO" name="TrabajoELEGIDO" onChange='actualizar()'></select><br>
+            <label for="TrabajoELEGIDO"></label><select id="TrabajoELEGIDO" name="TrabajoELEGIDO" onChange='actualizar()'></select><br>
             <label id="experiencia" class="experiencia">Experiencia necesaria:&nbsp;</label><label id="exprequerida" class="exprequerida"></label><br>
             <label id="sueldo" class="sueldo">Sueldo hora:&nbsp;</label><label id="sueldohora" class="sueldohora"></label><br>
-            <label id="duracion" class="duracion">Duracion:&nbsp;</label><select id="horas" name="horas" onChange='actualizar()'></select><br>
+            <label for="horas" id="duracion" class="duracion">Duracion:&nbsp;</label><select id="horas" name="horas" onChange='actualizar()'></select><br>
             <label id="exper" class="exper">Ganancia experiencia:&nbsp;</label><label id="gananciaexperiencia" class="gananciaexperiencia"></label><br>
             <label id="din" class="din">Ganancia dinero:&nbsp;</label><label id="gananciadinero" class="gananciadinero"></label>
             <input type="submit" name="trabajar" value="trabajar" /> <br>
@@ -32,6 +32,6 @@
 
     </div>
 <div th:replace="footer :: footer"></div>
-<script src="https://knockoutjs.com/downloads/knockout-3.5.0.js"></script>
+<script type="application/javascript" th:src="@{/js/externos/knockout-3.5.0.js}"></script>
 </body>
 </html>
