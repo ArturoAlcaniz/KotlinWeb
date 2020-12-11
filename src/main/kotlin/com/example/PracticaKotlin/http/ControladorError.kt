@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView
 
 @CrossOrigin
 @RestController
-class Controlador_Error : ErrorController {
+class ControladorError : ErrorController {
     @RequestMapping(value = [PATH])
     fun saveLeadQuery(): ModelAndView {
         return ModelAndView("redirect:/")

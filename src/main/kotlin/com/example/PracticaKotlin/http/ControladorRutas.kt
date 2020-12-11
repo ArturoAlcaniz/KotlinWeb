@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession
 
 
 @RestController
-class Controlador_Rutas {
+class ControladorRutas {
 
     @PostMapping("/login")
     fun login(session: HttpSession, @RequestBody credenciales: Map<String?, Any?>?): ResponseEntity<String> {

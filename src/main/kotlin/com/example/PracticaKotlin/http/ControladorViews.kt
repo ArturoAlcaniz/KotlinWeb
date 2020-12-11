@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession
 
 
 @Controller
-class Controlador_Views {
+class ControladorViews {
 
     fun redirect(): String{
         return "redirect:/"
