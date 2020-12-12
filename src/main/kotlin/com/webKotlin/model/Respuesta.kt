@@ -1,6 +1,6 @@
 package com.webKotlin.model
 
-enum class respuesta(val tipo: String) {
+enum class Respuesta(val tipo: String) {
     FAIL("Fallo inesperado"),
     JOINEDCHAT_OK("Se ha unido al chat correctamente"),
     SENTCHAT_OK("Mensaje enviado correctamente"),

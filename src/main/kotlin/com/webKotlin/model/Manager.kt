@@ -361,7 +361,7 @@ class Manager private constructor() {
      */
 
     fun joinToChat(session: HttpSession): ResponseEntity<String> {
-        var response = ResponseEntity.status(HttpStatus.OK).body(respuesta.JOINEDCHAT_OK.tipo)
+        var response = ResponseEntity.status(HttpStatus.OK).body(Respuesta.JOINEDCHAT_OK.tipo)
         try {
             val user: User? = findUserByHttpSessionId(session.id)
 
@@ -372,7 +372,7 @@ class Manager private constructor() {
             }
 
         }catch (ex: Exception){
-            response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(respuesta.FAIL.tipo)
+            response = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Respuesta.FAIL.tipo)
         }
 
         return response
@@ -385,7 +385,7 @@ class Manager private constructor() {
      */
 
     fun enviarMensaje(session: HttpSession, jso: JSONObject): ResponseEntity<String> {
-        var response : ResponseEntity<String> = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(respuesta.FAIL.tipo)
+        var response : ResponseEntity<String> = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Respuesta.FAIL.tipo)
         val mensaje: String = jso.getString("mensaje")
         val user: User = findUserByHttpSessionId(session.id) ?: return response
 
@@ -396,13 +396,13 @@ class Manager private constructor() {
 
         if(mensaje.take(1) != "/"){
             chatGlobal.insertarMensaje(user, mensaje)
-            chatGlobal.notifyMensaje(mensaje(Date(System.currentTimeMillis()), user.nick.toString(), mensaje))
+            chatGlobal.notifyMensaje(Mensaje(Date(System.currentTimeMillis()), user.nick.toString(), mensaje))
         }
 
         if(mensaje == "/clear"){
             log.info("Chat limpiado")
             chatGlobal.eliminarTodosMensajes()
-            chatGlobal.notifyComando(mensaje(Date(System.currentTimeMillis()), user.nick.toString(), mensaje))
+            chatGlobal.notifyComando(Mensaje(Date(System.currentTimeMillis()), user.nick.toString(), mensaje))
         }
 
         return response
@@ -416,11 +416,11 @@ class Manager private constructor() {
 
     private fun validarMensajeChat(user: User, mensaje: String): ResponseEntity<String> {
         if ((Date().time - (chatGlobal.getTimeOfUser(user)?.time ?: 0)) < 10000)
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(respuesta.SPAMM.tipo)
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Respuesta.SPAMM.tipo)
         if (containSpecialChar(mensaje))
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(respuesta.SPECIALCHAR.tipo)
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Respuesta.SPECIALCHAR.tipo)
 
-        return ResponseEntity.status(HttpStatus.OK).body(respuesta.SENTCHAT_OK.tipo)
+        return ResponseEntity.status(HttpStatus.OK).body(Respuesta.SENTCHAT_OK.tipo)
     }
 
     private fun containSpecialChar(texto: String): Boolean{

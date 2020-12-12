@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap
 
 
 class chat {
-    private var mensajes: MutableList<mensaje> = mutableListOf()
+    private var Mensajes: MutableList<Mensaje> = mutableListOf()
     private var usuarios: MutableList<User> = mutableListOf()
     private val lastTimeMessage: ConcurrentHashMap<User, Date> = ConcurrentHashMap()
 
@@ -17,7 +17,7 @@ class chat {
         val map = ObjectMapper()
         val obj: ObjectNode = map.createObjectNode()
         val array: ArrayNode = map.createArrayNode()
-        val iterator = this.mensajes.iterator()
+        val iterator = this.Mensajes.iterator()
 
         iterator.forEach {
             array.add(it.toMapper())
@@ -31,17 +31,17 @@ class chat {
 
     fun insertarMensaje(usuario: User, texto: String){
         val date = Date()
-        val mensaje = usuario.nick?.let { mensaje(date, it, texto) }
+        val mensaje = usuario.nick?.let { Mensaje(date, it, texto) }
         if(usuarios.contains(usuario)){
             if (mensaje != null) {
-                mensajes.add(mensaje)
+                Mensajes.add(mensaje)
             }
             lastTimeMessage[usuario] = date
         }
     }
 
     fun eliminarTodosMensajes(){
-        mensajes.clear()
+        Mensajes.clear()
     }
 
     fun insertarUsuario(user: User){
@@ -54,21 +54,21 @@ class chat {
             usuarios.remove(user)
     }
 
-    fun notifyMensaje(mensaje: mensaje) {
+    fun notifyMensaje(Mensaje: Mensaje) {
         for (user: User in this.usuarios){
             var obj: ObjectNode = ObjectMapper().createObjectNode()
             obj.put("type", "MensajeChat")
-            obj.set<ObjectNode>("mensaje", mensaje.toMapper())
+            obj.set<ObjectNode>("mensaje", Mensaje.toMapper())
             user.send(obj)
         }
 
     }
 
-    fun notifyComando(mensaje: mensaje) {
+    fun notifyComando(Mensaje: Mensaje) {
         for (user: User in this.usuarios){
             var obj: ObjectNode = ObjectMapper().createObjectNode()
             obj.put("type", "ComandoChat")
-            obj.put("comando", mensaje.texto)
+            obj.put("comando", Mensaje.texto)
             user.send(obj)
         }
 
@@ -79,7 +79,7 @@ class chat {
     }
 
     fun notifyStart(user: User?) {
-        if(mensajes.size >= 1)
+        if(Mensajes.size >= 1)
             user?.send(obtenerMensajes())
     }
 

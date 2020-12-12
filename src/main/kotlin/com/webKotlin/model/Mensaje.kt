@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class mensaje(var fecha: Date, var usuario: String, var texto: String) {
+class Mensaje(var fecha: Date, var usuario: String, var texto: String) {
 
     fun toMapper(): ObjectNode? {
         val map = ObjectMapper()
