@@ -1,4 +1,4 @@
-package com.example.PracticaKotlin.ws
+package com.webKotlin.ws
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

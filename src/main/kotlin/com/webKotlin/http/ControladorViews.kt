@@ -1,6 +1,6 @@
-package com.example.PracticaKotlin.http
+package com.webKotlin.http
 
-import com.example.PracticaKotlin.model.Manager
+import com.webKotlin.model.Manager
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
 import javax.servlet.http.HttpSession

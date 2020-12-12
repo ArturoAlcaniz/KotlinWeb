@@ -1,4 +1,4 @@
-package com.example.PracticaKotlin.model
+package com.webKotlin.model
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.node.ArrayNode

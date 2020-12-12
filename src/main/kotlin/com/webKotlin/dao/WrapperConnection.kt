@@ -1,4 +1,4 @@
-package com.example.PracticaKotlin.dao
+package com.webKotlin.dao
 
 import java.sql.Connection
 import java.sql.DriverManager

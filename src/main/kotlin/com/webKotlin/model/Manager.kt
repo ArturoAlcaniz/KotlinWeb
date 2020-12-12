@@ -1,6 +1,6 @@
-package com.example.PracticaKotlin.model
+package com.webKotlin.model
 
-import com.example.PracticaKotlin.dao.UserDAO
+import com.webKotlin.dao.UserDAO
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.node.ObjectNode
 import org.json.JSONObject
@@ -417,8 +417,16 @@ class Manager private constructor() {
     private fun validarMensajeChat(user: User, mensaje: String): ResponseEntity<String> {
         if ((Date().time - (chatGlobal.getTimeOfUser(user)?.time ?: 0)) < 10000)
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(respuesta.SPAMM.tipo)
+        if (containSpecialChar(mensaje))
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(respuesta.SPECIALCHAR.tipo)
 
         return ResponseEntity.status(HttpStatus.OK).body(respuesta.SENTCHAT_OK.tipo)
+    }
+
+    private fun containSpecialChar(texto: String): Boolean{
+        val pattern = Pattern.compile("[a-zA-Z0-9]*")
+        val matcher = pattern.matcher(texto)
+        return !matcher.matches()
     }
 
     companion object {

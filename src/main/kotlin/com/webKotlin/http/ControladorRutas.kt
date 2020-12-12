@@ -1,7 +1,7 @@
-package com.example.PracticaKotlin.http
+package com.webKotlin.http
 
-import com.example.PracticaKotlin.model.Manager
 import com.fasterxml.jackson.databind.node.ObjectNode
+import com.webKotlin.model.Manager
 import org.json.JSONObject
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping

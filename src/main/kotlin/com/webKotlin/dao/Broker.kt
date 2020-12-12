@@ -1,4 +1,4 @@
-package com.example.PracticaKotlin.dao
+package com.webKotlin.dao
 
 class Broker private constructor() {
     private val pool: Pool = Pool(10)

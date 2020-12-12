@@ -1,4 +1,4 @@
-package com.example.PracticaKotlin.dao
+package com.webKotlin.dao
 
 import java.util.*
 import java.util.logging.Logger

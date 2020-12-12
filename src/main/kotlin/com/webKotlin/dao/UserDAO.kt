@@ -1,7 +1,7 @@
-package com.example.PracticaKotlin.dao
+package com.webKotlin.dao
 
-import com.example.PracticaKotlin.dao.Broker.Companion.get
-import com.example.PracticaKotlin.model.User
+import com.webKotlin.dao.Broker.Companion.get
+import com.webKotlin.model.User
 import java.sql.SQLException
 import java.util.logging.Logger
 

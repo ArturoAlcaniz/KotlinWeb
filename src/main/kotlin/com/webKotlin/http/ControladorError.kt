@@ -1,4 +1,4 @@
-package com.example.PracticaKotlin.http
+package com.webKotlin.http
 import org.springframework.boot.web.servlet.error.ErrorController
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.RequestMapping

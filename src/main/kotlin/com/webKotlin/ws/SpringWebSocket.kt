@@ -1,6 +1,6 @@
-package com.example.PracticaKotlin.ws
+package com.webKotlin.ws
 
-import com.example.PracticaKotlin.model.Manager
+import com.webKotlin.model.Manager
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.WebSocketMessage
 import org.springframework.web.socket.WebSocketSession

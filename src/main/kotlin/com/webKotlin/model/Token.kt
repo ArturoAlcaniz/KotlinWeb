@@ -1,4 +1,4 @@
-package com.example.PracticaKotlin.model
+package com.webKotlin.model
 
 class Token {
     var id: Long? = null
